@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:33:34 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/01 20:18:43 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:22:07 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void	*ft_memchr(const void *str,int c, size_t n)
 	}
 	return NULL;
 }
-int main()
-{
-	char *str="redrebels";
-	printf("%s\n",ft_memchr(str,'d',5));
-}
+
+//int main()
+//{
+//	char *str="redrebels";
+//	printf("%s\n",ft_memchr(str,'d',5));
+//}

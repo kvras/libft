@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:46:01 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/02 15:50:13 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:25:33 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char	*ft_substr(char *str,int start,int len)
 {
+	int i = 0;
 	char *ptr = (char *)malloc(len + 1);
 	if (ptr == NULL)
 		return NULL;

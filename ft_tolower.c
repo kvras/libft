@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 21:32:46 by miguiji           #+#    #+#             */
-/*   Updated: 2023/10/31 21:34:15 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:16:38 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	ft_tolower(int c)
 {
 	if (ft_islower(c + 32))
 		return (c + 32);
-	return (c)
+	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:28:03 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/01 17:07:00 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:11:39 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 			len--;
 		}
 	}
-	else if (dst = src)
+	else if (dst == src)
 		return (dst);
-	return (ft_memcpy(dest,src,len));
+	return (ft_memcpy(dst,src,len));
 }

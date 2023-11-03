@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:53:07 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 18:26:03 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 21:11:25 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void ft_putnbr_fd(int nbr,int fd)
 		nbr = -nbr;
 	else if (nbr > 9)
 	{
-		ft_putnbr_fd(nbr / 10);
-		ft_putnbr_fd(nbr % 10);
+		ft_putnbr_fd(nbr / 10,fd);
+		ft_putnbr_fd(nbr % 10,fd);
 	}
 	else
 		ft_putchar_fd(nbr,fd);

@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:10:35 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/01 18:17:33 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:20:02 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	const char *ptr;
+	char *ptr;
 	ptr = NULL;
 	while(*str)
 	{
 		if (*str == c)
-			ptr = str;
-		str++
+			ptr = (char *)str;
+		str++;
 	}
 	return ptr;
 }

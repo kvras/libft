@@ -6,18 +6,12 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:36:41 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 17:36:45 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 21:09:44 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void fct(unsigned int i, char *c)
-{
-    puts(c);
-}
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int i;
@@ -27,9 +21,4 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	    (*f)(i,&s[i]);
 		i++;
 	}
-}
-int main()
-{
-    void (*f)(unsigned int,char) = &fct;
-    ft_striteri("hhhhhh",f);
 }

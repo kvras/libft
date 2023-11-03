@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:26:19 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/02 16:17:38 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 21:04:28 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ char *ft_strtrim(char const *str, char const *set)
 {
 	int i = 0;
 	int start;
-	while(check(&str[i]))
+	while(check(&((char *)str)[i],(char *)set))
 		i++;
 	start = i;
 	while(str[i])
 		i++;
-	while(check(&str[i-1]))
+	while(check(&((char *)str)[i-1],(char *)set))
 		i--;
-	return ft_substr(str,start,i-start+1);
+	return ft_substr((char *)str,start,i-start+1);
 }

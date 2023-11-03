@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 22:34:02 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 14:13:58 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 21:15:19 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,10 @@ char **ft_split(char *original,char c)
     }
     return D_arr;
 }
-int main()
+
+/*int main()
 {
-    int i = 0;
+	int i = 0;
     char **results = ft_split("ahmed ali amine ayman. . . .   ",' ');
     while(results[i])
     {
@@ -85,4 +86,4 @@ int main()
         i++;
     }
     return 0;
-}
+}*/

@@ -1,23 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/03 19:13:05 by miguiji           #+#    #+#             */
+/*   Updated: 2023/11/03 19:18:07 by miguiji          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strlcat(void *dst, const void *src, int  size)
+int	ft_strlcat(void *dst, const void *src, int  size)
 {
 	unsigned char *ptr1 = (unsigned char *)dst;
 	unsigned char *ptr2 = (unsigned char *)src;
-	size_t len_d;
-	size_t len_s;
-	size_t count;
+	int len_d;
+	int len_s;
+	int count;
+	int i;
+	i = 0;
 	len_d = strlen(dst);
 	len_s = strlen(src);
 	count = sizeof(dst) - len_d;
-	if(count <= len_src)
+	if(count <= len_s)
 		return len_d + size;
 	while(*ptr1)
-		ptr++;
+		ptr1++;
 	while(i < count)
 	{
-		ptr1 = ptr2
-		ptr++;
+		ptr1 = ptr2;
+		ptr1++;
 		ptr2++;
 		i++;
 	}

@@ -1,48 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 18:24:52 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 15:25:28 by miguiji          ###   ########.fr       */
+/*   Created: 2023/11/03 17:53:07 by miguiji           #+#    #+#             */
+/*   Updated: 2023/11/03 18:26:03 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	size_counter(int nbr)
+void ft_putnbr_fd(int nbr,int fd)
 {
-	int i;
-	i = 0;
-	if(nbr < 0)
-		i = 1;
-	while(nbr)
+	if( nbr == -2147483648)
 	{
-		nbr = nbr/10;
-		i++;
+		ft_putchar_fd('-',fd);
+		ft_putchar_fd('2',fd);
+		nbr = 147483648;
 	}
-	return i;
-}
-char	*ft_itoa(int nbr)
-{
-	char *ptr;
-	int size = size_counter(nbr);
-	ptr = (char *)malloc(size + 1);
-	if(ptr == NULL)
-		return ptr;
-	ptr[size] = '\0';
-	if(nbr < 0)
-	{
-		ptr[0] = '-';
+	else if (nbr < 0)
 		nbr = -nbr;
-	}
-	while(nbr)
+	else if (nbr > 9)
 	{
-		ptr[size-1] = nbr%10 + 48;
-		nbr = nbr / 10;;
-		size--;
+		ft_putnbr_fd(nbr / 10);
+		ft_putnbr_fd(nbr % 10);
 	}
-	return ptr;
+	else
+		ft_putchar_fd(nbr,fd);
 }

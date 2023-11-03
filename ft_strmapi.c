@@ -1,48 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 18:24:52 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 15:25:28 by miguiji          ###   ########.fr       */
+/*   Created: 2023/11/03 17:00:02 by miguiji           #+#    #+#             */
+/*   Updated: 2023/11/03 17:27:31 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	size_counter(int nbr)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int,char))
 {
-	int i;
-	i = 0;
-	if(nbr < 0)
-		i = 1;
-	while(nbr)
-	{
-		nbr = nbr/10;
-		i++;
-	}
-	return i;
-}
-char	*ft_itoa(int nbr)
-{
+	unsigned int i;
 	char *ptr;
-	int size = size_counter(nbr);
-	ptr = (char *)malloc(size + 1);
-	if(ptr == NULL)
-		return ptr;
-	ptr[size] = '\0';
-	if(nbr < 0)
+	int len;
+	i = 0;
+	len = ft_strlen(s);
+	ptr = (char *)malloc(len + 1);
+	ptr[len] = '\0';
+	while (i < len)
 	{
-		ptr[0] = '-';
-		nbr = -nbr;
-	}
-	while(nbr)
-	{
-		ptr[size-1] = nbr%10 + 48;
-		nbr = nbr / 10;;
-		size--;
+		ptr[i] = (*f)(i,s[i]);
+		i++;
 	}
 	return ptr;
 }

@@ -6,83 +6,83 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 22:34:02 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 10:29:03 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 14:13:58 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-static int count_words(char const *str,char c)
+int word_count(char *original,char c)
 {
-    int i = 0;
-    while (*str)
+    int i;
+    i = 0;
+    while(*original)
     {
-        while(*str == c)
-            str++;
-        if(*str)
+        while(*original == c && *original)
+            original++;
+        if(*original)
             i++;
-        while(*str != c && *str)
-            str++;
+        while(*original != c && *original)
+            original++;
     }
     return i;
 }
-
-static int count_letters(char *str,char c,int *j)
+void letters_count(char *original, char c, int *end, int *start)
 {
-    int i = 0;
-    while(str[*j] == c)
-        (*j)++;
-    while(str[*j] != c && str[*j])
-    {
-        (*j)++;
-        i++;
-    }
-    return i;
+    while(original[*end] == c && original[*end])
+        (*end)++;
+    *start = *end;
+    while(original[*end] != c && original[*end])
+        (*end)++;
 }
-
-
-char    **ft_split(char    *str,char c)
+int alloc_move(char *original,char c,char **D_arr,int *i)
 {
-    int j = 0;
-    int a = 0;
-    int i = 0;
-    char **ptr;
-    ptr = (char **)malloc((count_words(str,c) + 1) * sizeof(char *));
-    if (!ptr)
-        return (NULL);
-    while(i < count_words(str,c))
+    int start;
+    int end;
+    start = 0;
+    end = 0;
+    while(*i < word_count(original,c))
     {
-        ptr[i] = (char *)malloc(count_letters(str,c,&j) + 1);
-        if (!ptr[i]){
-        // for (int x = i; i >= 0; i-- )
-            // free(ptr[x]) // previ
-            // free (ptr)
-            return NULL;
+        letters_count(original,c,&end,&start);
+        D_arr[*i] = (char *)malloc(end-start+1);
+        if(D_arr[*i] == NULL)
+            return 0;
+        memmove(D_arr[*i],&original[start],end-start);
+        D_arr[*i][end-start] = '\0';
+        (*i)++;
+    }
+    return 1;
+}
+char **ft_split(char *original,char c)
+{
+    int i;
+    i = 0;
+    char **D_arr = malloc((word_count(original,c)+1)*sizeof(char *));
+    if(D_arr == NULL)
+        return D_arr;
+    D_arr[word_count(original,c)] = NULL;
+    if(!(alloc_move(original,c,D_arr,&i)))
+    {
+        while(i > 0)
+        {
+            free(D_arr[i]);
+            i--;
         }
-            // return NULL;
-        memmove(ptr[i],&str[a],j-a);
-        ptr[i][j]='\0';
-        a = j;
-        while(str[a] == c)
-            a++;
-        j = a;
-
-        i++;
+        free(D_arr);
+        return NULL;
     }
-    ptr[i] = NULL;
-    return ptr;
+    return D_arr;
 }
-int main() 
-{   int i = 0;
+int main()
+{
+    int i = 0;
     char **results = ft_split("ahmed ali amine ayman. . . .   ",' ');
     while(results[i])
     {
-        printf("|%s|",results[i]);
+        printf("%s",results[i]);
         i++;
     }
     return 0;
 }
-
-

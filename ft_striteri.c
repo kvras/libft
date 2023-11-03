@@ -1,48 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 18:24:52 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 15:25:28 by miguiji          ###   ########.fr       */
+/*   Created: 2023/11/03 17:36:41 by miguiji           #+#    #+#             */
+/*   Updated: 2023/11/03 17:36:45 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	size_counter(int nbr)
+void fct(unsigned int i, char *c)
 {
-	int i;
+    puts(c);
+}
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int i;
 	i = 0;
-	if(nbr < 0)
-		i = 1;
-	while(nbr)
+	while (s[i])
 	{
-		nbr = nbr/10;
+	    (*f)(i,&s[i]);
 		i++;
 	}
-	return i;
 }
-char	*ft_itoa(int nbr)
+int main()
 {
-	char *ptr;
-	int size = size_counter(nbr);
-	ptr = (char *)malloc(size + 1);
-	if(ptr == NULL)
-		return ptr;
-	ptr[size] = '\0';
-	if(nbr < 0)
-	{
-		ptr[0] = '-';
-		nbr = -nbr;
-	}
-	while(nbr)
-	{
-		ptr[size-1] = nbr%10 + 48;
-		nbr = nbr / 10;;
-		size--;
-	}
-	return ptr;
+    void (*f)(unsigned int,char) = &fct;
+    ft_striteri("hhhhhh",f);
 }

@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:53:07 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 21:11:25 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/03 23:26:51 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void ft_putnbr_fd(int nbr,int fd)
 	{
 		ft_putchar_fd('-',fd);
 		ft_putchar_fd('2',fd);
-		nbr = 147483648;
+		ft_putnbr_fd(147483648,fd);
 	}
 	else if (nbr < 0)
 		nbr = -nbr;
@@ -28,5 +28,5 @@ void ft_putnbr_fd(int nbr,int fd)
 		ft_putnbr_fd(nbr % 10,fd);
 	}
 	else
-		ft_putchar_fd(nbr,fd);
+		ft_putchar_fd(nbr+48,fd);
 }

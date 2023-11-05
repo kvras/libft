@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 21:19:25 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 21:14:16 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/04 19:27:55 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if(*src && size)
+	size_t i;
+	i = 0;
+	if(dstsize == 0)
+		return (size_t)ft_strlen(src);
+	while(i < dstsize - 1 && src[i])
 	{
-		memmove(dst,src,size);
-		return(strlen(src));
+		dst[i] = src[i];
+		i++;
 	}
-	return 0;
+	dst[i] = '\0';
+	return (size_t)ft_strlen(src);
 }
-//int main()
-//{
-//    const char *src = "ali";
-//	char dst[10];
-//    printf("%lu\n", strlcpy(dst,src,4));
-//	printf("%s\n",dst);
-//    return 0;
-//}

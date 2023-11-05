@@ -20,7 +20,9 @@ char *ft_strnstr(const char *haystack,const char *needle, size_t len)
 	string = (unsigned char *)haystack;
 	find = (unsigned char *)needle;
 	i = 0;
-	while (*string && i < len)
+	if(!(*needle))
+		return haystack;
+	while (*string && i < len)q
 	{
 		j = 0;
 		if(string[i] == find[j])

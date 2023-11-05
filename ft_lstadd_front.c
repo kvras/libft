@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 19:13:05 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 19:18:07 by miguiji          ###   ########.fr       */
+/*   Created: 2023/11/05 16:01:41 by miguiji           #+#    #+#             */
+/*   Updated: 2023/11/05 16:01:43 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void ft_lstadd_front(t_list **lst,t_list *new)
 {
-	size_t len_d;
-	size_t len_s;
-	int i;
-	i = 0;
-	len_s = ft_strlen(src);
-	len_d = ft_strlen((const char *)dst);
-	if(dstsize > len_d)
-	{
-		while(i < (dstsize - len_d - 1) && src[i])
-		{
-			dst[len_d + i] = src[i];
-			i++;
-		}
-		dst[len_d + i] = '\0';
-		return (len_d + len_s);
-	}
-	return len_s + dstsize;
+    new = (t_list *)malloc(sizeof(t_list));
+    new -> next = *lst;
 }

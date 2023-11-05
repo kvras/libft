@@ -12,17 +12,27 @@
 
 #include "libft.h"
 
-char	*ft_substr(char *str,int start,int len)
+char	*ft_substr(const char *str,int start,int len)
 {
 	int i = 0;
-	char *ptr = (char *)malloc(len + 1);
-	if (ptr == NULL)
+	char *ptr;
+	if(!(*str) || (start >= ft_strlen(str)))
 		return NULL;
-	while(i<len)
+	if(ft_strlen(str + start) < len)
+		ptr = (char *)malloc(ft_strlen(str + start) + 1);
+	else
+		ptr = (char *)malloc(len + 1);
+	if (ptr == NULL)
+		return 0;
+	while(i<len && i < ft_strlen(str+start))
 	{
 		ptr[i] = (str+start)[i];
 		i++;
 	}
-	ptr[len] = '\0';
+	ptr[i] = '\0';
 	return ptr;
 }
+//int main()
+//{
+//	printf("%s",ft_substr("mohamedamine",8,6));
+//}

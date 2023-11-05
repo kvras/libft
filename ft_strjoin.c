@@ -12,20 +12,31 @@
 
 #include "libft.h"
 
-static void ft_strcat(char *s1, char *s2)
+static void copy(char *ptr, const char *s)
 {
-	while(*s1)
-		s1++;
-	ft_memmove(s1,s2,ft_strlen(s2));
+	while(*ptr)
+		ptr++;
+	while(*s)
+	{
+		*ptr = *s;
+		ptr++;
+		s++;
+	}	
 }
 char *ft_strjoin(const char *s1, const char *s2)
 {
-	int len  = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	char *ptr = (char *)malloc(len + 1);
-	if(ptr == NULL)
+	int len;
+	char *ptr;
+	if(!(*s1) && !(*s2))
 		return NULL;
-	ft_strcat(ptr,(char *)s1);
-	ft_strcat(ptr,(char *)s2);
-	ptr[len] = '\0';
+	len = ft_strlen(s1) + ft_strlen(s2);
+	ptr = (char *)malloc(len + 1);
+	copy(ptr,s1);
+	copy(ptr,s2);
 	return ptr;
 }
+
+if (!str)
+if (str[0] = '\0')
+
+char *str = ""

@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 21:09:55 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 21:28:52 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/05 21:49:33 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char *ft_strnstr(const char *haystack,const char *needle, size_t len)
 	find = (unsigned char *)needle;
 	i = 0;
 	if(!(*needle))
-		return haystack;
-	while (*string && i < len)q
+		return (char *)haystack;
+	while (*string && i < len)
 	{
 		j = 0;
 		if(string[i] == find[j])

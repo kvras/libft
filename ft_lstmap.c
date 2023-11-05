@@ -10,13 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
     t_list *new;
+    t_list hea;
     t_list *head;
+    head = &hea;
     new = ft_lstnew(f(lst -> content));
+    lst = lst -> next;
     head -> next = new;
-    while(lst -> next)
+    while(lst)
     {
        if(!ft_lstnew(f(lst -> content)))
        {
@@ -27,6 +32,5 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
         lst = lst -> next;
         new = new -> next;
     }
-    new -> next = ft_lstnew(f(lst -> content));
     return head -> next;
 }

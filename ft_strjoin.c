@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:48:57 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/04 15:40:57 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/05 21:50:41 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,3 @@ char *ft_strjoin(const char *s1, const char *s2)
 	copy(ptr,s2);
 	return ptr;
 }
-
-if (!str)
-if (str[0] = '\0')
-
-char *str = ""

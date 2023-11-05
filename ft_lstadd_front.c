@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void ft_lstadd_front(t_list **lst,t_list *new)
 {
-    new = (t_list *)malloc(sizeof(t_list));
     new -> next = *lst;
+    *lst = new;
 }

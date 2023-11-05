@@ -6,13 +6,11 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 22:34:02 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 21:15:19 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/05 22:46:55 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 int word_count(char *original,char c)
 {

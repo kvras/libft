@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:13:05 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 19:18:07 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/05 21:51:27 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t len_d;
 	size_t len_s;
-	int i;
+	unsigned int i;
 	i = 0;
 	len_s = ft_strlen(src);
 	len_d = ft_strlen((const char *)dst);

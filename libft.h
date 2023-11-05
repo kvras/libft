@@ -53,7 +53,7 @@ int	ft_tolower(int c);
 int	ft_toupper(int c);
 typedef struct t_list{
     void    *content;
-    struct  s_list  *next;
+    struct  t_list  *next;
 }t_list;
 t_list    *ft_lstnew(void *content);
 void    ft_lstadd_front(t_list **lst, t_list *new);

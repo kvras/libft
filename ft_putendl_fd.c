@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*  ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,8 +14,9 @@
 #include "libft.h"
 void	ft_putendl_fd(char *s, int fd)
 {
-	char c;
+	char	c;
+
 	c = '\n';
-	ft_putstr_fd(s,fd);
-	ft_putchar_fd(c,fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd(c, fd);
 }

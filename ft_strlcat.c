@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*  ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,9 +20,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	len_s = ft_strlen(src);
 	len_d = ft_strlen((const char *)dst);
-	if(dstsize > len_d)
+	if (dstsize > len_d)
 	{
-		while(i < (dstsize - len_d - 1) && src[i])
+		while (i < (dstsize - len_d - 1) && src[i])
 		{
 			dst[len_d + i] = src[i];
 			i++;

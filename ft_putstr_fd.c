@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*  ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str ,int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
-	while(*str)
+	while (*str)
 	{
-		ft_putchar_fd(*str,fd);
+		ft_putchar_fd(*str, fd);
 		str++;
 	}
 }

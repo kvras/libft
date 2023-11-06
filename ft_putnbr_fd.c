@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*  ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,21 +12,24 @@
 
 #include "libft.h"
 
-void ft_putnbr_fd(int nbr,int fd)
+void ft_putnbr_fd(int nbr, int fd)
 {
-	if( nbr == -2147483648)
+	if ( nbr == - 2147483648)
 	{
-		ft_putchar_fd('-',fd);
-		ft_putchar_fd('2',fd);
-		ft_putnbr_fd(147483648,fd);
+		ft_putchar_fd(' - ', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd(147483648, fd);
 	}
 	else if (nbr < 0)
-		nbr = -nbr;
+	{
+		ft_putchar_fd(' - ', fd);
+		ft_putnbr_fd( - nbr, fd);
+	}
 	else if (nbr > 9)
 	{
-		ft_putnbr_fd(nbr / 10,fd);
-		ft_putnbr_fd(nbr % 10,fd);
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10, fd);
 	}
 	else
-		ft_putchar_fd(nbr+48,fd);
+		ft_putchar_fd(nbr+48, fd);
 }

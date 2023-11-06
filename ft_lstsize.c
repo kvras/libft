@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*  ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,10 +16,10 @@ int ft_lstsize(t_list *lst)
 {
 	int i;
 	i = 0;
-	while(lst != NULL)
+	while (lst != NULL)
 	{
 		i++;
-		lst = lst -> next;
+		lst = lst->next;
 	}
 	return i;
 }

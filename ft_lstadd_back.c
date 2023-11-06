@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*  ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:09:27 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/05 16:22:30 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/06 16:45:25 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (*lst == NULL)
 	{
-		*lst = new;
-		new -> next = NULL;
+		ft_lstadd_front(lst, new);
 	}
-	ft_lstlast(*lst) -> next = new;
-	new -> next = NULL;
+	else
+	{
+		ft_lstlast(*lst)->next = new;
+		new->next = NULL;
+	}
 }

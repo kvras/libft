@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*  ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_strnstr(const char *haystack,const char *needle, size_t len)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t i;
 	size_t j;
@@ -20,25 +20,25 @@ char *ft_strnstr(const char *haystack,const char *needle, size_t len)
 	string = (unsigned char *)haystack;
 	find = (unsigned char *)needle;
 	i = 0;
-	if(!(*needle))
+	if (!(*needle))
 		return (char *)haystack;
 	while (*string && i < len)
 	{
 		j = 0;
-		if(string[i] == find[j])
+		if (string[i] == find[j])
 		{
-			while(string[i+j] == find[j] && i + j < len)
+			while (string[i+j] == find[j] && i + j < len)
 				j++;
-			if(!find[j])
+			if (!find[j])
 				return ((char *)string + i);
 		}
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }
 /*int main()
 {
 	char *str = "amedah";
 	char *find = "ah";
-	printf("%s\n",ft_strnstr(str,find,6));
+	printf("%s\n", ft_strnstr(str, find, 6));
 }*/

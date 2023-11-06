@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*  ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,22 +12,22 @@
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str,int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
 	size_t i;
 	i = 0;
 	unsigned char *ptr = (unsigned char *)str;
-	while(i < n)
+	while (i < n)
 	{
 		if (ptr[i] == (unsigned char)c)
 			return &ptr[i];
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }
 
 //int main()
 //{
 //	char *str="redrebels";
-//	printf("%s\n",ft_memchr(str,'d',5));
+//	printf("%s\n", ft_memchr(str, 'd', 5));
 //}

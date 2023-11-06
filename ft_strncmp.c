@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*  ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -18,23 +18,23 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	unsigned char *s1 =(unsigned char *)str1;
 	unsigned char *s2 =(unsigned char *)str2;
 	i = 0;
-	if(!n)
+	if (!n)
 		return (0);
-	while(i < n && s1[i] && s2[i])
+	while (i < n && s1[i] && s2[i])
 	{
-		if(s1[i]-s2[i] != 0)
+		if (s1[i] - s2[i] != 0)
 			return (s1[i] - s2[i]);
 		i++;
 	}
-	if(s1[i] && i < n)
+	if (s1[i] && i < n)
 		return (s1[i]);
-	else if(s2[i] && i < n)
-		return(-s2[i]);
+	else if (s2[i] && i < n)
+		return( - s2[i]);
 	return (0);
 }
 /*int main ()
 {
-	printf("%d",ft_strncmp("", "1", 1));
-	return 0;
+	printf("%d", ft_strncmp("", "1", 1));
+	return (0);
 }
 */

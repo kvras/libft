@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*  ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	if (dst > src)
 	{
-		while(len)
+		while (len)
 		{
-			((unsigned char *)dst)[len - 1] = ((unsigned char * )src)[len-1];
-			len--;
+			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1];
+			len -  - ;
 		}
 	}
 	else if (dst == src)
 		return (dst);
-	return (ft_memcpy(dst,src,len));
+	return (ft_memcpy(dst, src, len));
 }

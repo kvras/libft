@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*  ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,13 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count,size_t nbr)
+void	*ft_calloc(size_t count, size_t nbr)
 {
-	void *ptr;
-	ptr =(char *)malloc(count*nbr);
-	if(ptr == NULL)
-		return NULL;
-	ft_bzero(ptr, count*nbr);
-	return ptr;
+	void	*ptr;
+
+	ptr = (char *)malloc(count * nbr);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, (count * nbr));
+	return (ptr);
 }

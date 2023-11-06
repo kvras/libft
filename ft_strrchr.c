@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*  ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -18,9 +18,9 @@ char	*ft_strrchr(const char *str, int c)
 	start = ft_strlen(str);
 	while (start >= 0)
 	{
-		if(str[start] == c)
+		if (str[start] == c)
 			return (char *)&str[start];
-		start--;
+		start -  - ;
 	}
-	return NULL;
+	return (NULL);
 }

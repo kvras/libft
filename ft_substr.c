@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*  ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,27 +12,29 @@
 
 #include "libft.h"
 
-char	*ft_substr(const char *str,int start,int len)
+char	*ft_substr(const char *str, int start, int len)
 {
-	int i = 0;
-	char *ptr;
-	if(!(*str) || (start >= ft_strlen(str)))
-		return NULL;
-	if(ft_strlen(str + start) < len)
+	int		i;
+	char	*ptr;
+
+	i = 0;
+	if (start >= ft_strlen(str))
+		return ft_strdup("");
+	if (ft_strlen(str + start) < len)
 		ptr = (char *)malloc(ft_strlen(str + start) + 1);
 	else
 		ptr = (char *)malloc(len + 1);
 	if (ptr == NULL)
-		return 0;
-	while(i<len && i < ft_strlen(str+start))
+		return (0);
+	while (i<len && (str+start)[i])
 	{
 		ptr[i] = (str+start)[i];
 		i++;
 	}
 	ptr[i] = '\0';
-	return ptr;
+	return (ptr);
 }
 //int main()
 //{
-//	printf("%s",ft_substr("mohamedamine",8,6));
+//	printf("%s", ft_substr("mohamedamine", 8, 6));
 //}

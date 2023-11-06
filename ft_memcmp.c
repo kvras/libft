@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*  ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,13 +20,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
    	ptr1 = (unsigned char *)s1;
 	ptr2 = (unsigned char *)s2;
-	while(*ptr1 == *ptr2 && *ptr1 && *ptr2 && i < n)
+	while (*ptr1 == *ptr2 && *ptr1 && *ptr2 && i < n)
 	{
 		ptr1++;
 		ptr2++;
 		i++;
 	}
-	if(*ptr1 != *ptr2 && i < n)
+	if (*ptr1 != *ptr2 && i < n)
 		return (*ptr1 - *ptr2);
 	return (0);
 }
@@ -34,6 +34,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 //{
 //	char *s1="ahmea";
 //	char *s2="ahme";
-//	printf("%d",ft_memcmp(s1,s2,5));
-//	return 0;
+//	printf("%d", ft_memcmp(s1, s2, 5));
+//	return (0);
 //}

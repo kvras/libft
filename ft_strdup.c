@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*  ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -18,9 +18,9 @@ char *ft_strdup(const char *str)
 	size_t len;
 	len = ft_strlen(str);
 	ptr = (char *)malloc(len+1);
-	if(ptr == NULL)
-		return NULL;
+	if (ptr == NULL)
+		return (NULL);
 	ptr = (char *)ft_memcpy(ptr, str, len);
 	ptr[len] = '\0';
-	return ptr;
+	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 21:21:35 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/03 19:15:26 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/06 22:01:37 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	ft_isupper(int c)
 		return (1);
 	return (0);
 }
+
 int	ft_toupper(int c)
 {
 	if (ft_isupper(c - 32))

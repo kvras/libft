@@ -6,13 +6,13 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:48:57 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/05 21:50:41 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/06 21:37:10 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void copy(char *ptr, const char *s)
+static void	copy(char *ptr, const char *s)
 {
 	while (*ptr)
 		ptr++;
@@ -24,10 +24,12 @@ static void copy(char *ptr, const char *s)
 	}
 	*ptr = '\0';
 }
-char *ft_strjoin(const char *s1, const char *s2)
+
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t len;
-	char *ptr;
+	size_t	len;
+	char	*ptr;
+
 	len = ft_strlen(s1) + ft_strlen(s2);
 	ptr = (char *)malloc(len + 1);
 	if (ptr == NULL)

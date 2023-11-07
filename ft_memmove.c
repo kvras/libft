@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:28:03 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/04 19:13:21 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/06 20:48:49 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (len)
 		{
 			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1];
-			len -  - ;
+			len--;
 		}
 	}
 	else if (dst == src)

@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 21:56:13 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/04 11:42:18 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/06 22:02:04 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 		i++;
 	if (str[i] == 45)
 	{
-		signe = signe * - 1;
+		signe = signe * -1;
 		i++;
 	}
 	else if (str[i] == 43)

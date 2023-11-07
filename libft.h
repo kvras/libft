@@ -6,7 +6,7 @@
 /*   By: miguiji <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:54:46 by miguiji           #+#    #+#             */
-/*   Updated: 2023/11/06 18:48:43 by miguiji          ###   ########.fr       */
+/*   Updated: 2023/11/06 20:48:31 by miguiji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nbr, int fd);
-void	ft_putstr_fd(char *str:, int fd);
+void	ft_putstr_fd(char *str, int fd);
 char	**ft_split(char *original, char c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *str);
